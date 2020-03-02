@@ -1,0 +1,11 @@
+
+.main				// start of program
+
+
+start:	
+	BIPUSH 0x1
+	MDUP 2
+	BIPUSH 0x2
+	MDUP 5
+.end-main
+

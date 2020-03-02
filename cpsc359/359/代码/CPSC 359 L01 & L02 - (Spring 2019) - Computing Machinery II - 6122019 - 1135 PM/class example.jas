@@ -1,0 +1,40 @@
+
+.main				// start of program
+
+.var				// local variables for main program
+i
+j
+s
+.end-var
+
+start:	
+	BIPUSH 0x64		// 100
+	ISTORE j
+	BIPUSH 0x0
+	DUP
+	ISTORE s
+	ISTORE i
+	
+check:
+	ILOAD i
+	ILOAD j
+	ISUB // i - j
+	IFLT for_body // i < j
+	GOTO end
+for_body:
+	// s += i
+	ILOAD i
+	ILOAD s
+	IADD
+	ISTORE s 
+
+	// i++
+	ILOAD i
+	BIPUSH 0x1
+	IADD
+	ISTORE i
+	GOTO check
+end:
+	
+.end-main
+
